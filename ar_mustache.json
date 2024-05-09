@@ -1,0 +1,168 @@
+{
+  "project": {
+    "id": "46syga",
+    "name": "AR Mustache",
+    "creationTs": 1715226691312,
+    "lastModifiedTs": 1715228323195,
+    "userSetData": {
+      "description": "Quick Example in under 5 minutes",
+      "tags": [],
+      "contactURL": "",
+      "tutorialYouTube": ""
+    }
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "live_camera_ij5gq5",
+        "nodeSpecId": "live_camera",
+        "customData": {
+          "runContinuously": true,
+          "initialWidth": 240,
+          "initialHeight": 320,
+          "previewX": 400,
+          "previewY": 16,
+          "previewWidth": 240,
+          "previewHeight": 320
+        },
+        "uiData": {
+          "posX": 56,
+          "posY": 86.39996337890625,
+          "width": 176,
+          "height": 105,
+          "selected": false
+        },
+        "propValues": {
+          "hidePreview": true
+        }
+      },
+      {
+        "id": "speech_to_text_stream_mmmoz8",
+        "nodeSpecId": "speech_to_text_stream",
+        "customData": {
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 48,
+          "posY": 208,
+          "width": 196.33740234375,
+          "height": 68,
+          "selected": false
+        }
+      },
+      {
+        "id": "face_landmark_fbxaeu",
+        "nodeSpecId": "face_landmark",
+        "customData": {
+          "previewX": 992,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 384,
+          "posY": 224,
+          "width": 176,
+          "height": 141,
+          "selected": true
+        },
+        "inputValues": {
+          "staticImage": false
+        },
+        "incomingEdges": {
+          "image": [
+            {
+              "sourceNodeId": "live_camera_ij5gq5",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "virtual_sticker_xoa42w",
+        "nodeSpecId": "virtual_sticker",
+        "customData": {
+          "previewX": 16,
+          "previewY": 16,
+          "previewWidth": 320,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 656,
+          "posY": 80,
+          "width": 176,
+          "height": 255,
+          "selected": false
+        },
+        "propValues": {
+          "anchor": "mustache",
+          "scale": 1,
+          "offsetX": 10,
+          "offsetY": 10,
+          "hidePreview": false
+        },
+        "incomingEdges": {
+          "landmarkResult": [
+            {
+              "sourceNodeId": "face_landmark_fbxaeu",
+              "outputId": "landmarkResult"
+            }
+          ],
+          "stickerImage": [
+            {
+              "sourceNodeId": "input_image_ne8mrl",
+              "outputId": "image"
+            }
+          ],
+          "originalImage": [
+            {
+              "sourceNodeId": "live_camera_ij5gq5",
+              "outputId": "image"
+            }
+          ]
+        }
+      },
+      {
+        "id": "input_image_ne8mrl",
+        "nodeSpecId": "input_image",
+        "customData": {
+          "initialWidth": 448,
+          "initialHeight": 240,
+          "previewX": 992,
+          "previewY": 16,
+          "previewWidth": 448,
+          "previewHeight": 240
+        },
+        "uiData": {
+          "posX": 80,
+          "posY": 432,
+          "width": 176,
+          "height": 180,
+          "selected": false
+        },
+        "propValues": {
+          "urls": [
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic1.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic2.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic3.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic4.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic5.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic6.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic7.jpeg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic8.jpg",
+            "https://storage.googleapis.com/tfweb/visualblocks-input-images/pic9.jpg",
+            "https://cdn.pixabay.com/photo/2017/01/31/13/23/disguise-2023997_1280.png"
+          ],
+          "gridColumnCount": "1",
+          "allowUserUpload": false,
+          "selectedImageUrl": "https://cdn.pixabay.com/photo/2017/01/31/13/23/disguise-2023997_1280.png",
+          "hidePreview": true
+        }
+      }
+    ]
+  },
+  "customNodeUrls": []
+}
